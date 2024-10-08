@@ -1,9 +1,50 @@
 # ninja log v6
-1	435	1728379138739838246	build.ninja	6cae2e5b2fcca796
-0	137	1728379138882141518	inf224_autogen/timestamp	d992b7ca3ea71f64
-0	137	1728379138882141518	inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
-0	137	1728379138882141518	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/timestamp	d992b7ca3ea71f64
-0	137	1728379138882141518	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
-137	174	1728379138889221349	CMakeFiles/inf224.dir/inf224_autogen/mocs_compilation.cpp.o	c1ad22cf1fdeab94
-137	972	1728379138889394721	CMakeFiles/inf224.dir/main.cpp.o	c18cb9d62ff05740
-974	1140	1728379139725718525	inf224	a87c1d0bd0472aec
+212	1029	1728384436481274708	CMakeFiles/inf224.dir/Photo.cpp.o	4ef0d89a89058f31
+11	61	1728388948045721422	inf224_autogen/timestamp	d992b7ca3ea71f64
+8	693	1728389727840016504	build.ninja	6cae2e5b2fcca796
+212	1026	1728384436481424998	CMakeFiles/inf224.dir/Video.cpp.o	791adbc721cd405f
+61	1650	1728388948095724858	CMakeFiles/inf224.dir/main.cpp.o	bd420c20254df0e
+11	61	1728388948045721422	inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+11	61	1728388948045721422	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/timestamp	d992b7ca3ea71f64
+11	61	1728388948045721422	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+212	289	1728384436480746923	CMakeFiles/inf224.dir/inf224_autogen/mocs_compilation.cpp.o	ebcdfc91ff57d54b
+212	1027	1728384436481127710	CMakeFiles/inf224.dir/Multimedia.cpp.o	5d0f9324edcef32e
+1650	1882	1728388949684020688	inf224	f161fad7d69bd2ed
+11	88	1728389735583391015	inf224_autogen/timestamp	d992b7ca3ea71f64
+11	88	1728389735583391015	inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+11	88	1728389735583391015	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/timestamp	d992b7ca3ea71f64
+11	88	1728389735583391015	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+88	125	1728389735660399665	CMakeFiles/inf224.dir/inf224_autogen/mocs_compilation.cpp.o	d1357d328df32543
+88	702	1728389735660762785	CMakeFiles/inf224.dir/Multimedia.cpp.o	cfcaa1af90d06a71
+88	1439	1728389735660612037	CMakeFiles/inf224.dir/main.cpp.o	34188507e0d013cb
+1439	1587	1728389737011770826	inf224	707b7e31976fdc86
+11	60	1728389918219061779	inf224_autogen/timestamp	d992b7ca3ea71f64
+11	60	1728389918219061779	inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+11	60	1728389918219061779	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/timestamp	d992b7ca3ea71f64
+11	60	1728389918219061779	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+60	1534	1728389918267584941	CMakeFiles/inf224.dir/main.cpp.o	34188507e0d013cb
+1534	1765	1728389919741945736	inf224	707b7e31976fdc86
+11	58	1728389976255795481	inf224_autogen/timestamp	d992b7ca3ea71f64
+11	58	1728389976255795481	inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+11	58	1728389976255795481	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/timestamp	d992b7ca3ea71f64
+11	58	1728389976255795481	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+58	1472	1728389976302852452	CMakeFiles/inf224.dir/main.cpp.o	34188507e0d013cb
+1472	1617	1728389977716730689	inf224	707b7e31976fdc86
+25	75	1728390172898933450	inf224_autogen/timestamp	d992b7ca3ea71f64
+25	75	1728390172898933450	inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+25	75	1728390172898933450	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/timestamp	d992b7ca3ea71f64
+25	75	1728390172898933450	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+75	1696	1728390172948070855	CMakeFiles/inf224.dir/main.cpp.o	34188507e0d013cb
+1696	1926	1728390174569549824	inf224	707b7e31976fdc86
+11	60	1728390386903267971	inf224_autogen/timestamp	d992b7ca3ea71f64
+11	60	1728390386903267971	inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+11	60	1728390386903267971	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/timestamp	d992b7ca3ea71f64
+11	60	1728390386903267971	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+60	1705	1728390386951717050	CMakeFiles/inf224.dir/main.cpp.o	34188507e0d013cb
+1705	1937	1728390388596586945	inf224	707b7e31976fdc86
+15	71	1728390932794064494	inf224_autogen/timestamp	d992b7ca3ea71f64
+15	71	1728390932794064494	inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+15	71	1728390932794064494	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/timestamp	d992b7ca3ea71f64
+15	71	1728390932794064494	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+71	1580	1728390932850257063	CMakeFiles/inf224.dir/main.cpp.o	34188507e0d013cb
+1580	1814	1728390934358980732	inf224	707b7e31976fdc86

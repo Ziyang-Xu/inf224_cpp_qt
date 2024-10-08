@@ -6,17 +6,19 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-
 find_package(Qt6 COMPONENTS
         Core
         Gui
         Widgets
+        Multimedia
+        MultimediaWidgets
         REQUIRED)
 
-add_executable(inf224 main.cpp)
+add_executable(inf224 main.cpp Multimedia.cpp)
 target_link_libraries(inf224
         Qt::Core
         Qt::Gui
         Qt::Widgets
+        Qt::Multimedia
+        Qt::MultimediaWidgets
 )
-
