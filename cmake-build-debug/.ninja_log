@@ -1,0 +1,9 @@
+# ninja log v6
+1	435	1728379138739838246	build.ninja	6cae2e5b2fcca796
+0	137	1728379138882141518	inf224_autogen/timestamp	d992b7ca3ea71f64
+0	137	1728379138882141518	inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+0	137	1728379138882141518	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/timestamp	d992b7ca3ea71f64
+0	137	1728379138882141518	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+137	174	1728379138889221349	CMakeFiles/inf224.dir/inf224_autogen/mocs_compilation.cpp.o	c1ad22cf1fdeab94
+137	972	1728379138889394721	CMakeFiles/inf224.dir/main.cpp.o	c18cb9d62ff05740
+974	1140	1728379139725718525	inf224	a87c1d0bd0472aec
