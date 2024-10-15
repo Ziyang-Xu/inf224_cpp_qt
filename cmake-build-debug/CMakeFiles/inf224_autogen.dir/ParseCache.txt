@@ -2,3 +2,4 @@
 /Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/main.cpp
 /Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/Multimedia.cpp
 /Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/Multimedia.h
+/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/Film.h

@@ -14,7 +14,8 @@ find_package(Qt6 COMPONENTS
         MultimediaWidgets
         REQUIRED)
 
-add_executable(inf224 main.cpp Multimedia.cpp)
+add_executable(inf224 main.cpp Multimedia.cpp
+        Film.h)
 target_link_libraries(inf224
         Qt::Core
         Qt::Gui
