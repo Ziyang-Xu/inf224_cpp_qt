@@ -1,7 +1,3 @@
-#include <vector>
-#include "Multimedia.h"
-#include "Photo.h"
-#include "Video.h"
 #include <QApplication>
 #include <QPushButton>
 #include <QLabel>
@@ -11,7 +7,10 @@
 #include <QMediaPlayer>
 #include <iostream>
 #include <QDir>
+#include "Photo.h"
+#include "Video.h"
 #include "Film.h"
+#include "Group.h"
 
 class FilmWindow : public QWidget {
 public:
@@ -43,6 +42,7 @@ private:
     QMediaPlayer* mediaPlayer;
     Film film; // Store the Film object
 };
+
 class VideoWindow : public QWidget {
 public:
     VideoWindow(const Video& video, QWidget* parent = nullptr) : QWidget(parent), video(video) {
@@ -107,6 +107,23 @@ int main(int argc, char *argv[]) {
     multimediaList.push_back(video);
     multimediaList.push_back(film);
 
+    // Create groups
+    Group photoGroup("Photo Group");
+    photoGroup.push_back(photo);
+
+    Group videoGroup("Video Group");
+    videoGroup.push_back(video);
+
+    Group mixedGroup("Mixed Group");
+    mixedGroup.push_back(photo);
+    mixedGroup.push_back(video);
+    mixedGroup.push_back(film);
+
+    // Display groups
+    photoGroup.display(std::cout);
+    videoGroup.display(std::cout);
+    mixedGroup.display(std::cout);
+
     // Create windows for Photo, Video, and Film
     QWidget* photoWindow = createPhotoWindow(*photo);
     VideoWindow* videoWindow = new VideoWindow(*video);
@@ -116,6 +133,35 @@ int main(int argc, char *argv[]) {
     layout->addWidget(photoWindow);
     layout->addWidget(videoWindow);
     layout->addWidget(filmWindow);
+
+    // Create buttons
+    QPushButton* photoButton = new QPushButton("Show Photo Coordinates");
+    QPushButton* videoButton = new QPushButton("Show Video Duration");
+    QPushButton* filmButton = new QPushButton("Show Film Chapters Durations");
+
+    // Connect buttons to slots
+    QObject::connect(photoButton, &QPushButton::clicked, [photo]() {
+        std::cout << "Photo Coordinates: (" << photo->getLatitude() << ", " << photo->getLongitude() << ")" << std::endl;
+    });
+
+    QObject::connect(videoButton, &QPushButton::clicked, [video]() {
+        std::cout << "Video Duration: " << video->getDuration() << " seconds" << std::endl;
+    });
+
+    QObject::connect(filmButton, &QPushButton::clicked, [film]() {
+        std::cout << "Film Duration: " << film->getDuration() << " seconds" << std::endl;
+        std::cout << "Chapters Durations: ";
+        const int* chapters = film->getChapters();
+        for (int i = 0; i < film->getNumChapters(); ++i) {
+            std::cout << chapters[i] << " ";
+        }
+        std::cout << std::endl;
+    });
+
+    // Add buttons to the layout
+    layout->addWidget(photoButton);
+    layout->addWidget(videoButton);
+    layout->addWidget(filmButton);
 
     window.setLayout(layout);
     window.setGeometry(100, 100, 800, 600); // Set the size of the main window
