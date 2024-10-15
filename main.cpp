@@ -2,16 +2,50 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QWidget>
+#include <QVideoWidget>
+#include <QMediaPlayer>
 #include <iostream>
 #include <QDir>
+#include <vector>
 #include "Multimedia.h"
 #include "Photo.h"
 #include "Video.h"
 
+class VideoWindow : public QWidget {
+public:
+    VideoWindow(const Video& video, QWidget* parent = nullptr) : QWidget(parent), video(video) {
+        setWindowTitle("Sample Video");
+
+        QVBoxLayout* videoLayout = new QVBoxLayout;
+
+        videoWidget = new QVideoWidget;
+        mediaPlayer = new QMediaPlayer;
+
+        mediaPlayer->setVideoOutput(videoWidget);
+        mediaPlayer->setSource(QUrl::fromLocalFile(QString::fromStdString(video.getFilePath())));
+
+        videoLayout->addWidget(videoWidget);
+
+        QPushButton* playButton = new QPushButton("Play Video");
+        videoLayout->addWidget(playButton);
+
+        connect(playButton, &QPushButton::clicked, [this, video]() {
+            video.play();
+        });
+
+        setLayout(videoLayout);
+    }
+
+private:
+    QVideoWidget* videoWidget;
+    QMediaPlayer* mediaPlayer;
+    Video video; // Store the Video object
+};
+
 QWidget* createPhotoWindow(const Photo& photo) {
     QWidget* photoWindow = new QWidget;
     photoWindow->setWindowTitle("Sample Photo");
-    photoWindow->setGeometry(100, 100, 400, 200);
 
     QVBoxLayout* photoLayout = new QVBoxLayout;
     QLabel* photoLabel = new QLabel;
@@ -22,44 +56,33 @@ QWidget* createPhotoWindow(const Photo& photo) {
     return photoWindow;
 }
 
-QWidget* createVideoWindow(const Video& video) {
-    QWidget* videoWindow = new QWidget;
-    videoWindow->setWindowTitle("Sample Video");
-    videoWindow->setGeometry(100, 100, 400, 200);
-
-    QVBoxLayout* videoLayout = new QVBoxLayout;
-    QLabel* videoLabel = new QLabel;
-    videoLabel->setText("Click the button to play the video");
-    videoLayout->addWidget(videoLabel);
-
-    QPushButton* videoButton = new QPushButton("Play Video");
-    videoLayout->addWidget(videoButton);
-
-    QObject::connect(videoButton, &QPushButton::clicked, [&video]() {
-        video.play();
-    });
-
-    videoWindow->setLayout(videoLayout);
-    return videoWindow;
-}
-
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
     QWidget window;
     window.setWindowTitle("Multimedia Player");
-    window.setGeometry(100, 100, 400, 200);
 
     QVBoxLayout* layout = new QVBoxLayout;
 
-    Photo photo("Photo", "../sample_photo.jpg", 37.7749, 122.4194);
-    QWidget* photoWindow = createPhotoWindow(photo);
-    layout->addWidget(photoWindow);
+    // Create a vector of pointers to Multimedia objects
+    std::vector<Multimedia*> multimediaList;
 
-    Video video("Video", "../sample_video.mp4", 10);
-    QWidget* videoWindow = createVideoWindow(video);
+    // Add Photo and Video objects to the list
+    Photo* photo = new Photo("Photo", "../sample_photo.jpg", 37.7749, 122.4194);
+    Video* video = new Video("Video", "../sample_video.mp4", 10);
+
+    multimediaList.push_back(photo);
+    multimediaList.push_back(video);
+
+    // Create windows for Photo and Video
+    QWidget* photoWindow = createPhotoWindow(*photo);
+    VideoWindow* videoWindow = new VideoWindow(*video);
+
+    // Add windows to the layout
+    layout->addWidget(photoWindow);
     layout->addWidget(videoWindow);
 
     window.setLayout(layout);
+    window.setGeometry(100, 100, 800, 600); // Set the size of the main window
     window.show();
 
     return app.exec();
