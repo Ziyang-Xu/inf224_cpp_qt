@@ -11,6 +11,7 @@
 #include "Video.h"
 #include "Film.h"
 #include "Group.h"
+#include "MultimediaManager.h"
 
 class FilmWindow : public QWidget {
 public:
@@ -96,45 +97,29 @@ int main(int argc, char *argv[]) {
 
     QVBoxLayout* layout = new QVBoxLayout;
 
-    // Create a vector of shared pointers to Multimedia objects
-    std::vector<std::shared_ptr<Multimedia>> multimediaList;
+    MultimediaManager manager;
 
-    // Add Photo, Video, and Film objects to the list
-    auto photo = std::make_shared<Photo>("Photo", "../sample_photo.jpg", 37.7749, 122.4194);
-    auto video = std::make_shared<Video>("Video", "../sample_video.mp4", 10);
+    // Create multimedia objects and groups
+    auto photo = manager.createPhoto("Photo", "../sample_photo.jpg", 37.7749, 122.4194);
+    auto video = manager.createVideo("Video", "../sample_video.mp4", 10);
     std::vector<int> chapters = {10, 20, 30};
-    auto film = std::make_shared<Film>("Film", "../sample_film.mp4", 60, chapters);
+    auto film = manager.createFilm("Film", "../sample_film.mp4", 60, chapters);
 
-    multimediaList.push_back(photo);
-    multimediaList.push_back(video);
-    multimediaList.push_back(film);
-
-    // Create groups
-    auto photoGroup = std::make_shared<Group>("Photo Group");
+    auto photoGroup = manager.createGroup("Photo Group");
     photoGroup->push_back(photo);
 
-    auto videoGroup = std::make_shared<Group>("Video Group");
+    auto videoGroup = manager.createGroup("Video Group");
     videoGroup->push_back(video);
 
-    auto mixedGroup = std::make_shared<Group>("Mixed Group");
+    auto mixedGroup = manager.createGroup("Mixed Group");
     mixedGroup->push_back(photo);
     mixedGroup->push_back(video);
     mixedGroup->push_back(film);
 
     // Display groups
-    photoGroup->display(std::cout);
-    videoGroup->display(std::cout);
-    mixedGroup->display(std::cout);
-
-    // Create windows for Photo, Video, and Film
-    QWidget* photoWindow = createPhotoWindow(*photo);
-    VideoWindow* videoWindow = new VideoWindow(video);
-    FilmWindow* filmWindow = new FilmWindow(film);
-
-    // Add windows to the layout
-    layout->addWidget(photoWindow);
-    layout->addWidget(videoWindow);
-    layout->addWidget(filmWindow);
+    manager.displayGroup("Photo Group");
+    manager.displayGroup("Video Group");
+    manager.displayGroup("Mixed Group");
 
     // Create buttons
     QPushButton* photoButton = new QPushButton("Show Photo Coordinates");

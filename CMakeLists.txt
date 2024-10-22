@@ -20,7 +20,9 @@ add_executable(inf224 main.cpp Multimedia.cpp
         Photo.cpp
         Video.cpp
         Group.cpp
-        Film.cpp)
+        Film.cpp
+        MultimediaManager.h
+        MultimediaManager.cpp)
 target_link_libraries(inf224
         Qt::Core
         Qt::Gui

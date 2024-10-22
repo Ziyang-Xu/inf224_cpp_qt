@@ -391,6 +391,12 @@
 			null
 		],
 		[
+			"/Users/Chaleur/Desktop/France/t\u00e9l\u00e9com/2\u00e8me Ann\u00e9e/inf224/MultimediaManager.h",
+			"MU",
+			"EWIEGA46WW/moc_MultimediaManager.cpp",
+			null
+		],
+		[
 			"/Users/Chaleur/Desktop/France/t\u00e9l\u00e9com/2\u00e8me Ann\u00e9e/inf224/Photo.h",
 			"MU",
 			"EWIEGA46WW/moc_Photo.cpp",
@@ -488,6 +494,11 @@
 		],
 		[
 			"/Users/Chaleur/Desktop/France/t\u00e9l\u00e9com/2\u00e8me Ann\u00e9e/inf224/Multimedia.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/Chaleur/Desktop/France/t\u00e9l\u00e9com/2\u00e8me Ann\u00e9e/inf224/MultimediaManager.cpp",
 			"MU",
 			null
 		],
