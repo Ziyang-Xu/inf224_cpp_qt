@@ -389,6 +389,18 @@
 			"MU",
 			"EWIEGA46WW/moc_Multimedia.cpp",
 			null
+		],
+		[
+			"/Users/Chaleur/Desktop/France/t\u00e9l\u00e9com/2\u00e8me Ann\u00e9e/inf224/Photo.h",
+			"MU",
+			"EWIEGA46WW/moc_Photo.cpp",
+			null
+		],
+		[
+			"/Users/Chaleur/Desktop/France/t\u00e9l\u00e9com/2\u00e8me Ann\u00e9e/inf224/Video.h",
+			"MU",
+			"EWIEGA46WW/moc_Video.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -465,7 +477,27 @@
 	"SOURCES" : 
 	[
 		[
+			"/Users/Chaleur/Desktop/France/t\u00e9l\u00e9com/2\u00e8me Ann\u00e9e/inf224/Film.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/Chaleur/Desktop/France/t\u00e9l\u00e9com/2\u00e8me Ann\u00e9e/inf224/Group.cpp",
+			"MU",
+			null
+		],
+		[
 			"/Users/Chaleur/Desktop/France/t\u00e9l\u00e9com/2\u00e8me Ann\u00e9e/inf224/Multimedia.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/Chaleur/Desktop/France/t\u00e9l\u00e9com/2\u00e8me Ann\u00e9e/inf224/Photo.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/Chaleur/Desktop/France/t\u00e9l\u00e9com/2\u00e8me Ann\u00e9e/inf224/Video.cpp",
 			"MU",
 			null
 		],

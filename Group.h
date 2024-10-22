@@ -1,31 +1,25 @@
 #ifndef GROUP_H
 #define GROUP_H
 
-#include <list>
-#include <string>
+#include <vector>
+#include <memory>
 #include <iostream>
 #include "Multimedia.h"
 
-class Group : public std::list<Multimedia*> {
+class Group {
 private:
     std::string name;
+    std::vector<std::shared_ptr<Multimedia>> items;
 
 public:
-    // Constructor
-    Group(const std::string& groupName) : name(groupName) {}
+    Group(const std::string &name);
+    ~Group();
 
-    // Accessor for group name
-    std::string getName() const {
-        return name;
-    }
-
-    // Display method
-    void display(std::ostream& os) const {
-        os << "Group: " << name << std::endl;
-        for (const auto& item : *this) {
-            item->display(os);
-        }
-    }
+    void push_back(const std::shared_ptr<Multimedia> &item);
+    void remove(const std::shared_ptr<Multimedia> &item);
+    void display(std::ostream &os) const;
 };
+
+using GroupPtr = std::shared_ptr<Group>;
 
 #endif // GROUP_H

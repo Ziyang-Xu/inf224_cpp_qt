@@ -14,7 +14,8 @@
 
 class FilmWindow : public QWidget {
 public:
-    FilmWindow(const Film& film, QWidget* parent = nullptr) : QWidget(parent), film(film) {
+    FilmWindow(const std::shared_ptr<Film>& film, QWidget* parent = nullptr)
+        : QWidget(parent), film(film) {
         setWindowTitle("Sample Film");
 
         QVBoxLayout* filmLayout = new QVBoxLayout;
@@ -23,15 +24,15 @@ public:
         mediaPlayer = new QMediaPlayer;
 
         mediaPlayer->setVideoOutput(videoWidget);
-        mediaPlayer->setSource(QUrl::fromLocalFile(QString::fromStdString(film.getFilePath())));
+        mediaPlayer->setSource(QUrl::fromLocalFile(QString::fromStdString(film->getFilePath())));
 
         filmLayout->addWidget(videoWidget);
 
         QPushButton* playButton = new QPushButton("Play Film");
         filmLayout->addWidget(playButton);
 
-        connect(playButton, &QPushButton::clicked, [this, film]() {
-            film.play();
+        connect(playButton, &QPushButton::clicked, [this]() {
+            mediaPlayer->play();
         });
 
         setLayout(filmLayout);
@@ -40,12 +41,13 @@ public:
 private:
     QVideoWidget* videoWidget;
     QMediaPlayer* mediaPlayer;
-    Film film; // Store the Film object
+    std::shared_ptr<Film> film;
 };
 
 class VideoWindow : public QWidget {
 public:
-    VideoWindow(const Video& video, QWidget* parent = nullptr) : QWidget(parent), video(video) {
+    VideoWindow(const std::shared_ptr<Video>& video, QWidget* parent = nullptr)
+        : QWidget(parent), video(video) {
         setWindowTitle("Sample Video");
 
         QVBoxLayout* videoLayout = new QVBoxLayout;
@@ -54,15 +56,15 @@ public:
         mediaPlayer = new QMediaPlayer;
 
         mediaPlayer->setVideoOutput(videoWidget);
-        mediaPlayer->setSource(QUrl::fromLocalFile(QString::fromStdString(video.getFilePath())));
+        mediaPlayer->setSource(QUrl::fromLocalFile(QString::fromStdString(video->getFilePath())));
 
         videoLayout->addWidget(videoWidget);
 
         QPushButton* playButton = new QPushButton("Play Video");
         videoLayout->addWidget(playButton);
 
-        connect(playButton, &QPushButton::clicked, [this, video]() {
-            video.play();
+        connect(playButton, &QPushButton::clicked, [this]() {
+            mediaPlayer->play();
         });
 
         setLayout(videoLayout);
@@ -71,7 +73,7 @@ public:
 private:
     QVideoWidget* videoWidget;
     QMediaPlayer* mediaPlayer;
-    Video video; // Store the Video object
+    std::shared_ptr<Video> video;
 };
 
 QWidget* createPhotoWindow(const Photo& photo) {
@@ -94,40 +96,40 @@ int main(int argc, char *argv[]) {
 
     QVBoxLayout* layout = new QVBoxLayout;
 
-    // Create a vector of pointers to Multimedia objects
-    std::vector<Multimedia*> multimediaList;
+    // Create a vector of shared pointers to Multimedia objects
+    std::vector<std::shared_ptr<Multimedia>> multimediaList;
 
     // Add Photo, Video, and Film objects to the list
-    Photo* photo = new Photo("Photo", "../sample_photo.jpg", 37.7749, 122.4194);
-    Video* video = new Video("Video", "../sample_video.mp4", 10);
-    int chapters[] = {10, 20, 30};
-    Film* film = new Film("Film", "../sample_film.mp4", 60, chapters, 3);
+    auto photo = std::make_shared<Photo>("Photo", "../sample_photo.jpg", 37.7749, 122.4194);
+    auto video = std::make_shared<Video>("Video", "../sample_video.mp4", 10);
+    std::vector<int> chapters = {10, 20, 30};
+    auto film = std::make_shared<Film>("Film", "../sample_film.mp4", 60, chapters);
 
     multimediaList.push_back(photo);
     multimediaList.push_back(video);
     multimediaList.push_back(film);
 
     // Create groups
-    Group photoGroup("Photo Group");
-    photoGroup.push_back(photo);
+    auto photoGroup = std::make_shared<Group>("Photo Group");
+    photoGroup->push_back(photo);
 
-    Group videoGroup("Video Group");
-    videoGroup.push_back(video);
+    auto videoGroup = std::make_shared<Group>("Video Group");
+    videoGroup->push_back(video);
 
-    Group mixedGroup("Mixed Group");
-    mixedGroup.push_back(photo);
-    mixedGroup.push_back(video);
-    mixedGroup.push_back(film);
+    auto mixedGroup = std::make_shared<Group>("Mixed Group");
+    mixedGroup->push_back(photo);
+    mixedGroup->push_back(video);
+    mixedGroup->push_back(film);
 
     // Display groups
-    photoGroup.display(std::cout);
-    videoGroup.display(std::cout);
-    mixedGroup.display(std::cout);
+    photoGroup->display(std::cout);
+    videoGroup->display(std::cout);
+    mixedGroup->display(std::cout);
 
     // Create windows for Photo, Video, and Film
     QWidget* photoWindow = createPhotoWindow(*photo);
-    VideoWindow* videoWindow = new VideoWindow(*video);
-    FilmWindow* filmWindow = new FilmWindow(*film);
+    VideoWindow* videoWindow = new VideoWindow(video);
+    FilmWindow* filmWindow = new FilmWindow(film);
 
     // Add windows to the layout
     layout->addWidget(photoWindow);
@@ -151,9 +153,9 @@ int main(int argc, char *argv[]) {
     QObject::connect(filmButton, &QPushButton::clicked, [film]() {
         std::cout << "Film Duration: " << film->getDuration() << " seconds" << std::endl;
         std::cout << "Chapters Durations: ";
-        const int* chapters = film->getChapters();
-        for (int i = 0; i < film->getNumChapters(); ++i) {
-            std::cout << chapters[i] << " ";
+        const std::vector<int>& chapters = film->getChapters();
+        for (int chapter : chapters) {
+            std::cout << chapter << " ";
         }
         std::cout << std::endl;
     });

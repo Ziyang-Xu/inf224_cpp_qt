@@ -39,10 +39,16 @@ inf224_autogen/timestamp: \
   /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Darwin.cmake \
   /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake \
   /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/CMakeLists.txt \
+  /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/Film.cpp \
   /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/Film.h \
+  /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/Group.cpp \
   /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/Group.h \
   /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/Multimedia.cpp \
   /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/Multimedia.h \
+  /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/Photo.cpp \
+  /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/Photo.h \
+  /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/Video.cpp \
+  /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/Video.h \
   CMakeFiles/3.28.6/CMakeCCompiler.cmake \
   CMakeFiles/3.28.6/CMakeCXXCompiler.cmake \
   CMakeFiles/3.28.6/CMakeSystem.cmake \

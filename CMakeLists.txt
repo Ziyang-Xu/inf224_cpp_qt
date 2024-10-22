@@ -16,7 +16,11 @@ find_package(Qt6 COMPONENTS
 
 add_executable(inf224 main.cpp Multimedia.cpp
         Film.h
-        Group.h)
+        Group.h
+        Photo.cpp
+        Video.cpp
+        Group.cpp
+        Film.cpp)
 target_link_libraries(inf224
         Qt::Core
         Qt::Gui
