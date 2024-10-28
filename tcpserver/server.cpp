@@ -1,46 +1,54 @@
-//
-//  server.cpp
-//  TP C++
-//  Eric Lecolinet - Telecom ParisTech - 2016.
-//
-
-#include <memory>
-#include <string>
 #include <iostream>
 #include <sstream>
+#include <string>
+#include <memory>
+#include "../MultimediaManager.h"
+#include "ccsocket.h"
 #include "tcpserver.h"
 
-const int PORT = 3331;
+#define PORT 3331
 
+void processRequest(const std::string &request, MultimediaManager &manager, std::string &response) {
+  std::istringstream iss(request);
+  std::string command;
+  iss >> command;
 
-int main(int argc, char* argv[])
-{
-  // cree le TCPServer
-  auto* server =
-  new TCPServer( [&](std::string const& request, std::string& response) {
+  if (command == "search") {
+    std::string type, name;
+    iss >> type >> name;
+    std::ostringstream oss;
+    if (type == "multimedia") {
+      manager.displayMultimedia(name);
+    } else if (type == "group") {
+      manager.displayGroup(name);
+    } else {
+      oss << "Unknown type: " << type;
+    }
+    response = oss.str();
+  } else if (command == "play") {
+    std::string name;
+    iss >> name;
+    manager.playMultimedia(name);
+    response = "Playing multimedia: " + name;
+  } else {
+    response = "Unknown command: " + command;
+  }
+}
 
-    // the request sent by the client to the server
-    std::cout << "request: " << request << std::endl;
+int main() {
+  MultimediaManager manager;
+  // Add some multimedia objects and groups to the manager for testing
+  manager.createPhoto("photo", "../sample_photo.jpg", 48.858844, 2.294351);
+  manager.createVideo("video", "../sample_video.mp4", 120);
+  manager.createFilm("film", "../sample_film.mp4", 90, {10, 20, 30});
+  manager.createGroup("group1");
 
-    // the response that the server sends back to the client
-    response = "RECEIVED: " + request;
-
-    // return false would close the connecytion with the client
-    return true;
+  TCPServer server([&manager](std::string const &request, std::string &response) {
+      processRequest(request, manager, response);
+      return true;
   });
 
-
-  // lance la boucle infinie du serveur
-  std::cout << "Starting Server on port " << PORT << std::endl;
-
-  int status = server->run(PORT);
-
-  // en cas d'erreur
-  if (status < 0) {
-    std::cerr << "Could not start Server on port " << PORT << std::endl;
-    return 1;
-  }
+  server.run(PORT);
 
   return 0;
 }
-
