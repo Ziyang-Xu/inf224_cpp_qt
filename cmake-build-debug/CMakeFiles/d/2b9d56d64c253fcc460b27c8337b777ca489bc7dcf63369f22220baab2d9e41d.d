@@ -45,6 +45,7 @@ inf224_autogen/timestamp: \
   /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/Group.h \
   /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/Multimedia.cpp \
   /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/Multimedia.h \
+  /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/MultimediaException.h \
   /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/MultimediaManager.cpp \
   /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/MultimediaManager.h \
   /Users/Chaleur/Desktop/France/télécom/2ème\ Année/inf224/Photo.cpp \

@@ -1,3 +1,4 @@
+// File: MultimediaManager.h
 #ifndef MULTIMEDIAMANAGER_H
 #define MULTIMEDIAMANAGER_H
 
@@ -7,6 +8,7 @@
 #include <map>
 #include "Multimedia.h"
 #include "Group.h"
+#include "MultimediaException.h"
 
 class MultimediaManager {
 public:
@@ -23,6 +25,7 @@ public:
 private:
     std::map<std::string, std::shared_ptr<Multimedia>> multimediaMap;
     std::map<std::string, std::shared_ptr<Group>> groupMap;
+    bool isValidName(const std::string& name) const;
 };
 
 #endif // MULTIMEDIAMANAGER_H
