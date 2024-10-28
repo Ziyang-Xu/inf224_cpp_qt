@@ -1,76 +1,86 @@
 #include "MultimediaManager.h"
+#include "Photo.h"
+#include "Video.h"
+#include "Film.h"
+#include "Group.h"
+#include <fstream>
 #include <iostream>
 
-std::shared_ptr<Photo> MultimediaManager::createPhoto(const std::string &name, const std::string &filePath, double latitude, double longitude) {
-    auto photo = std::make_shared<Photo>(name, filePath, latitude, longitude);
-    multimediaTable[name] = photo;
-    return photo;
+void MultimediaManager::createPhoto(const std::string& name, const std::string& path, double latitude, double longitude) {
+    multimediaMap[name] = std::make_shared<Photo>(name, path, latitude, longitude);
 }
 
-std::shared_ptr<Video> MultimediaManager::createVideo(const std::string &name, const std::string &filePath, int duration) {
-    auto video = std::make_shared<Video>(name, filePath, duration);
-    multimediaTable[name] = video;
-    return video;
+void MultimediaManager::createVideo(const std::string& name, const std::string& path, int duration) {
+    multimediaMap[name] = std::make_shared<Video>(name, path, duration);
 }
 
-std::shared_ptr<Film> MultimediaManager::createFilm(const std::string &name, const std::string &filePath, int duration, const std::vector<int> &chapters) {
-    auto film = std::make_shared<Film>(name, filePath, duration, chapters);
-    multimediaTable[name] = film;
-    return film;
+void MultimediaManager::createFilm(const std::string& name, const std::string& path, int duration, const std::vector<int>& chapters) {
+    multimediaMap[name] = std::make_shared<Film>(name, path, duration, chapters);
 }
 
-std::shared_ptr<Group> MultimediaManager::createGroup(const std::string &name) {
-    auto group = std::make_shared<Group>(name);
-    groupTable[name] = group;
-    return group;
+void MultimediaManager::createGroup(const std::string& name) {
+    groupMap[name] = std::make_shared<Group>(name);
 }
 
-void MultimediaManager::displayMultimedia(const std::string &name) const {
-    auto it = multimediaTable.find(name);
-    if (it != multimediaTable.end()) {
+void MultimediaManager::displayMultimedia(const std::string& name) const {
+    auto it = multimediaMap.find(name);
+    if (it != multimediaMap.end()) {
         it->second->display(std::cout);
     } else {
-        std::cout << "Multimedia object not found: " << name << std::endl;
+        std::cout << "Multimedia not found: " << name << std::endl;
     }
 }
 
-void MultimediaManager::displayGroup(const std::string &name) const {
-    auto it = groupTable.find(name);
-    if (it != groupTable.end()) {
+void MultimediaManager::displayGroup(const std::string& name) const {
+    auto it = groupMap.find(name);
+    if (it != groupMap.end()) {
         it->second->display(std::cout);
     } else {
         std::cout << "Group not found: " << name << std::endl;
     }
 }
 
-void MultimediaManager::playMultimedia(const std::string &name) const {
-    auto it = multimediaTable.find(name);
-    if (it != multimediaTable.end()) {
+void MultimediaManager::playMultimedia(const std::string& name) const {
+    auto it = multimediaMap.find(name);
+    if (it != multimediaMap.end()) {
         it->second->play();
     } else {
-        std::cout << "Multimedia object not found: " << name << std::endl;
+        std::cout << "Multimedia not found: " << name << std::endl;
     }
 }
 
-void MultimediaManager::deleteMultimedia(const std::string &name) {
-    auto it = multimediaTable.find(name);
-    if (it != multimediaTable.end()) {
-        for (auto &groupPair : groupTable) {
-            groupPair.second->remove(it->second);
+void MultimediaManager::save(const std::string& filename) const {
+    std::ofstream ofs(filename);
+    if (!ofs) {
+        std::cerr << "Could not open file for writing: " << filename << std::endl;
+        return;
+    }
+    for (const auto& pair : multimediaMap) {
+        ofs << *pair.second;
+    }
+    ofs.close();
+}
+
+void MultimediaManager::load(const std::string& filename) {
+    std::ifstream ifs(filename);
+    if (!ifs) {
+        std::cerr << "Could not open file for reading: " << filename << std::endl;
+        return;
+    }
+    std::string className;
+    while (std::getline(ifs, className)) {
+        std::shared_ptr<Multimedia> multimedia;
+        if (className == "Photo") {
+            multimedia = std::make_shared<Photo>("", "", 0.0, 0.0);
+        } else if (className == "Video") {
+            multimedia = std::make_shared<Video>("", "", 0);
+        } else if (className == "Film") {
+            multimedia = std::make_shared<Film>("", "", 0, std::vector<int>());
         }
-        multimediaTable.erase(it);
-    } else {
-        std::cout << "Multimedia object not found: " << name << std::endl;
+        if (multimedia) {
+            ifs >> *multimedia;
+            multimediaMap[multimedia->getName()] = multimedia;
+        }
     }
+    ifs.close();
 }
-
-void MultimediaManager::deleteGroup(const std::string &name) {
-    auto it = groupTable.find(name);
-    if (it != groupTable.end()) {
-        groupTable.erase(it);
-    } else {
-        std::cout << "Group not found: " << name << std::endl;
-    }
-}//
-// Created by Chaleur on 22/10/2024.
-//

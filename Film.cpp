@@ -1,21 +1,44 @@
 #include "Film.h"
-#include <iostream>
 
-Film::Film(const std::string &name, const std::string &filePath, int duration, const std::vector<int> &chapters)
-    : Video(name, filePath, duration), chapters(chapters) {}
+Film::Film(const std::string& name, const std::string& path, int duration, const std::vector<int>& chapters)
+    : Multimedia(name, path), duration(duration), chapters(chapters) {}
 
-Film::~Film() {
-    std::cout << "Film " << getName() << " is being destroyed" << std::endl;
+void Film::display(std::ostream& os) const {
+    Multimedia::display(os);
+    os << "Duration: " << duration << " seconds\nChapters: ";
+    for (const auto& chapter : chapters) {
+        os << chapter << " ";
+    }
+    os << std::endl;
 }
 
-const std::vector<int>& Film::getChapters() const {
-    return chapters;
+void Film::play() const {
+    std::cout << "Playing film: " << name << std::endl;
 }
 
-int Film::getNumChapters() const {
-    return chapters.size();
+void Film::serialize(std::ofstream& ofs) const {
+    ofs << name << std::endl;
+    ofs << path << std::endl;
+    ofs << duration << std::endl;
+    ofs << chapters.size() << std::endl;
+    for (const auto& chapter : chapters) {
+        ofs << chapter << std::endl;
+    }
 }
 
-void Film::setChapters(const std::vector<int> &chapters) {
-    this->chapters = chapters;
+void Film::deserialize(std::ifstream& ifs) {
+    std::getline(ifs, name);
+    std::getline(ifs, path);
+    ifs >> duration;
+    size_t chaptersSize;
+    ifs >> chaptersSize;
+    chapters.resize(chaptersSize);
+    for (size_t i = 0; i < chaptersSize; ++i) {
+        ifs >> chapters[i];
+    }
+    ifs.ignore(); // Ignore the newline character after the last chapter
+}
+
+std::string Film::getClassName() const {
+    return "Film";
 }

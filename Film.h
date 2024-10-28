@@ -1,22 +1,21 @@
 #ifndef FILM_H
 #define FILM_H
 
-#include "Video.h"
+#include "Multimedia.h"
 #include <vector>
 
-class Film : public Video {
-private:
-    std::vector<int> chapters;
-
+class Film : public Multimedia {
 public:
-    Film(const std::string &name, const std::string &filePath, int duration, const std::vector<int> &chapters);
-    ~Film() override;
+    Film(const std::string& name, const std::string& path, int duration, const std::vector<int>& chapters);
+    void display(std::ostream& os) const override;
+    void play() const override;
+    void serialize(std::ofstream& ofs) const override;
+    void deserialize(std::ifstream& ifs) override;
+    std::string getClassName() const override;
 
-    const std::vector<int>& getChapters() const;
-    int getNumChapters() const;
-    void setChapters(const std::vector<int> &chapters);
+private:
+    int duration;
+    std::vector<int> chapters;
 };
-
-using FilmPtr = std::shared_ptr<Film>;
 
 #endif // FILM_H

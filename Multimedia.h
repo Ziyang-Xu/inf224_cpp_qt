@@ -3,33 +3,26 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 
 class Multimedia {
-private:
-    std::string name;
-    std::string filePath;
-
 public:
-    // Default constructor
-    Multimedia();
-
-    // Parameterized constructor
-    Multimedia(const std::string &name, const std::string &filePath);
-
-    // Destructor
+    Multimedia(const std::string& name, const std::string& path);
     virtual ~Multimedia();
-
-    // Getters
+    virtual void display(std::ostream& os) const;
+    virtual void play() const = 0;
     std::string getName() const;
-    std::string getFilePath() const;
 
-    // Setters
-    void setName(const std::string &name);
-    void setFilePath(const std::string &filePath);
+    virtual void serialize(std::ofstream& ofs) const = 0;
+    virtual void deserialize(std::ifstream& ifs) = 0;
+    virtual std::string getClassName() const = 0;
 
-    // Display method
-    virtual void display(std::ostream &os) const;
-    virtual void play() const = 0; // Pure virtual function
+    friend std::ofstream& operator<<(std::ofstream& ofs, const Multimedia& multimedia);
+    friend std::ifstream& operator>>(std::ifstream& ifs, Multimedia& multimedia);
+
+protected:
+    std::string name;
+    std::string path;
 };
 
 #endif // MULTIMEDIA_H

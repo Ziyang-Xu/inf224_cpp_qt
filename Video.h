@@ -2,22 +2,18 @@
 #define VIDEO_H
 
 #include "Multimedia.h"
-#include <iostream>
 
 class Video : public Multimedia {
+public:
+    Video(const std::string& name, const std::string& path, int duration);
+    void display(std::ostream& os) const override;
+    void play() const override;
+    void serialize(std::ofstream& ofs) const override;
+    void deserialize(std::ifstream& ifs) override;
+    std::string getClassName() const override;
+
 private:
     int duration;
-
-public:
-    Video(const std::string &name, const std::string &filePath, int duration);
-    ~Video() override;
-
-    int getDuration() const;
-
-    void display(std::ostream &os) const override;
-    void play() const override;
 };
-
-using VideoPtr = std::shared_ptr<Video>;
 
 #endif // VIDEO_H

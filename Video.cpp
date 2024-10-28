@@ -1,21 +1,30 @@
 #include "Video.h"
 
-Video::Video(const std::string &name, const std::string &filePath, int duration)
-    : Multimedia(name, filePath), duration(duration) {}
+Video::Video(const std::string& name, const std::string& path, int duration)
+    : Multimedia(name, path), duration(duration) {}
 
-Video::~Video() {
-    std::cout << "Video " << getName() << " is being destroyed" << std::endl;
-}
-
-int Video::getDuration() const {
-    return duration;
-}
-
-void Video::display(std::ostream &os) const {
+void Video::display(std::ostream& os) const {
     Multimedia::display(os);
     os << "Duration: " << duration << " seconds" << std::endl;
 }
 
 void Video::play() const {
-    std::cout << "Playing video: " << getName() << std::endl;
+    std::cout << "Playing video: " << name << std::endl;
+}
+
+void Video::serialize(std::ofstream& ofs) const {
+    ofs << name << std::endl;
+    ofs << path << std::endl;
+    ofs << duration << std::endl;
+}
+
+void Video::deserialize(std::ifstream& ifs) {
+    std::getline(ifs, name);
+    std::getline(ifs, path);
+    ifs >> duration;
+    ifs.ignore(); // Ignore the newline character after duration
+}
+
+std::string Video::getClassName() const {
+    return "Video";
 }
