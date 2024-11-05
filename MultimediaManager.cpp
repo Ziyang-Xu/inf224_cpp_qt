@@ -80,3 +80,37 @@ bool MultimediaManager::isValidName(const std::string& name) const {
     std::regex namePattern("^[a-zA-Z0-9_\\-]+$");
     return std::regex_match(name, namePattern);
 }
+void MultimediaManager::load(const std::string& filename) {
+    std::ifstream ifs(filename);
+    if (!ifs) {
+        std::cerr << "Could not open file for reading: " << filename << std::endl;
+        return;
+    }
+    std::string className;
+    while (std::getline(ifs, className)) {
+        std::shared_ptr<Multimedia> multimedia;
+        if (className == "Photo") {
+            multimedia = std::make_shared<Photo>("", "", 0.0, 0.0);
+        } else if (className == "Video") {
+            multimedia = std::make_shared<Video>("", "", 0);
+        } else if (className == "Film") {
+            multimedia = std::make_shared<Film>("", "", 0, std::vector<int>());
+        }
+        if (multimedia) {
+            ifs >> *multimedia;
+            multimediaMap[multimedia->getName()] = multimedia;
+        }
+    }
+    ifs.close();
+}
+void MultimediaManager::save(const std::string& filename) const {
+    std::ofstream ofs(filename);
+    if (!ofs) {
+        std::cerr << "Could not open file for writing: " << filename << std::endl;
+        return;
+    }
+    for (const auto& pair : multimediaMap) {
+        ofs << *pair.second;
+    }
+    ofs.close();
+}

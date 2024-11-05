@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_inf224: phony || inf224_autogen inf224_a
 build CMakeFiles/inf224.dir/inf224_autogen/mocs_compilation.cpp.o: CXX_COMPILER__inf224_unscanned_Debug /Users/Chaleur/Desktop/France/télécom/2ème$ Année/inf224/cmake-build-debug/inf224_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_inf224
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/inf224.dir/inf224_autogen/mocs_compilation.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fcolor-diagnostics
   INCLUDES = -isystem "/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/include" -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtMultimedia.framework/Headers -isystem /opt/homebrew/lib/QtNetwork.framework/Headers -isystem /opt/homebrew/lib/QtMultimediaWidgets.framework/Headers
   OBJECT_DIR = CMakeFiles/inf224.dir
   OBJECT_FILE_DIR = CMakeFiles/inf224.dir/inf224_autogen
@@ -60,7 +60,7 @@ build CMakeFiles/inf224.dir/inf224_autogen/mocs_compilation.cpp.o: CXX_COMPILER_
 build CMakeFiles/inf224.dir/main.cpp.o: CXX_COMPILER__inf224_unscanned_Debug /Users/Chaleur/Desktop/France/télécom/2ème$ Année/inf224/main.cpp || cmake_object_order_depends_target_inf224
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/inf224.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fcolor-diagnostics
   INCLUDES = -isystem "/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/include" -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtMultimedia.framework/Headers -isystem /opt/homebrew/lib/QtNetwork.framework/Headers -isystem /opt/homebrew/lib/QtMultimediaWidgets.framework/Headers
   OBJECT_DIR = CMakeFiles/inf224.dir
   OBJECT_FILE_DIR = CMakeFiles/inf224.dir
@@ -68,7 +68,7 @@ build CMakeFiles/inf224.dir/main.cpp.o: CXX_COMPILER__inf224_unscanned_Debug /Us
 build CMakeFiles/inf224.dir/Multimedia.cpp.o: CXX_COMPILER__inf224_unscanned_Debug /Users/Chaleur/Desktop/France/télécom/2ème$ Année/inf224/Multimedia.cpp || cmake_object_order_depends_target_inf224
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/inf224.dir/Multimedia.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fcolor-diagnostics
   INCLUDES = -isystem "/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/include" -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtMultimedia.framework/Headers -isystem /opt/homebrew/lib/QtNetwork.framework/Headers -isystem /opt/homebrew/lib/QtMultimediaWidgets.framework/Headers
   OBJECT_DIR = CMakeFiles/inf224.dir
   OBJECT_FILE_DIR = CMakeFiles/inf224.dir
@@ -76,7 +76,7 @@ build CMakeFiles/inf224.dir/Multimedia.cpp.o: CXX_COMPILER__inf224_unscanned_Deb
 build CMakeFiles/inf224.dir/Photo.cpp.o: CXX_COMPILER__inf224_unscanned_Debug /Users/Chaleur/Desktop/France/télécom/2ème$ Année/inf224/Photo.cpp || cmake_object_order_depends_target_inf224
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/inf224.dir/Photo.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fcolor-diagnostics
   INCLUDES = -isystem "/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/include" -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtMultimedia.framework/Headers -isystem /opt/homebrew/lib/QtNetwork.framework/Headers -isystem /opt/homebrew/lib/QtMultimediaWidgets.framework/Headers
   OBJECT_DIR = CMakeFiles/inf224.dir
   OBJECT_FILE_DIR = CMakeFiles/inf224.dir
@@ -84,7 +84,7 @@ build CMakeFiles/inf224.dir/Photo.cpp.o: CXX_COMPILER__inf224_unscanned_Debug /U
 build CMakeFiles/inf224.dir/Video.cpp.o: CXX_COMPILER__inf224_unscanned_Debug /Users/Chaleur/Desktop/France/télécom/2ème$ Année/inf224/Video.cpp || cmake_object_order_depends_target_inf224
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/inf224.dir/Video.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fcolor-diagnostics
   INCLUDES = -isystem "/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/include" -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtMultimedia.framework/Headers -isystem /opt/homebrew/lib/QtNetwork.framework/Headers -isystem /opt/homebrew/lib/QtMultimediaWidgets.framework/Headers
   OBJECT_DIR = CMakeFiles/inf224.dir
   OBJECT_FILE_DIR = CMakeFiles/inf224.dir
@@ -92,7 +92,7 @@ build CMakeFiles/inf224.dir/Video.cpp.o: CXX_COMPILER__inf224_unscanned_Debug /U
 build CMakeFiles/inf224.dir/Group.cpp.o: CXX_COMPILER__inf224_unscanned_Debug /Users/Chaleur/Desktop/France/télécom/2ème$ Année/inf224/Group.cpp || cmake_object_order_depends_target_inf224
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/inf224.dir/Group.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fcolor-diagnostics
   INCLUDES = -isystem "/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/include" -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtMultimedia.framework/Headers -isystem /opt/homebrew/lib/QtNetwork.framework/Headers -isystem /opt/homebrew/lib/QtMultimediaWidgets.framework/Headers
   OBJECT_DIR = CMakeFiles/inf224.dir
   OBJECT_FILE_DIR = CMakeFiles/inf224.dir
@@ -100,7 +100,7 @@ build CMakeFiles/inf224.dir/Group.cpp.o: CXX_COMPILER__inf224_unscanned_Debug /U
 build CMakeFiles/inf224.dir/Film.cpp.o: CXX_COMPILER__inf224_unscanned_Debug /Users/Chaleur/Desktop/France/télécom/2ème$ Année/inf224/Film.cpp || cmake_object_order_depends_target_inf224
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/inf224.dir/Film.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fcolor-diagnostics
   INCLUDES = -isystem "/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/include" -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtMultimedia.framework/Headers -isystem /opt/homebrew/lib/QtNetwork.framework/Headers -isystem /opt/homebrew/lib/QtMultimediaWidgets.framework/Headers
   OBJECT_DIR = CMakeFiles/inf224.dir
   OBJECT_FILE_DIR = CMakeFiles/inf224.dir
@@ -108,7 +108,7 @@ build CMakeFiles/inf224.dir/Film.cpp.o: CXX_COMPILER__inf224_unscanned_Debug /Us
 build CMakeFiles/inf224.dir/MultimediaManager.cpp.o: CXX_COMPILER__inf224_unscanned_Debug /Users/Chaleur/Desktop/France/télécom/2ème$ Année/inf224/MultimediaManager.cpp || cmake_object_order_depends_target_inf224
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/inf224.dir/MultimediaManager.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fcolor-diagnostics
   INCLUDES = -isystem "/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/include" -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtMultimedia.framework/Headers -isystem /opt/homebrew/lib/QtNetwork.framework/Headers -isystem /opt/homebrew/lib/QtMultimediaWidgets.framework/Headers
   OBJECT_DIR = CMakeFiles/inf224.dir
   OBJECT_FILE_DIR = CMakeFiles/inf224.dir
@@ -122,7 +122,7 @@ build CMakeFiles/inf224.dir/MultimediaManager.cpp.o: CXX_COMPILER__inf224_unscan
 # Link the executable inf224
 
 build inf224: CXX_EXECUTABLE_LINKER__inf224_Debug CMakeFiles/inf224.dir/inf224_autogen/mocs_compilation.cpp.o CMakeFiles/inf224.dir/main.cpp.o CMakeFiles/inf224.dir/Multimedia.cpp.o CMakeFiles/inf224.dir/Photo.cpp.o CMakeFiles/inf224.dir/Video.cpp.o CMakeFiles/inf224.dir/Group.cpp.o CMakeFiles/inf224.dir/Film.cpp.o CMakeFiles/inf224.dir/MultimediaManager.cpp.o | /opt/homebrew/lib/QtMultimediaWidgets.framework/Versions/A/QtMultimediaWidgets /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets /opt/homebrew/lib/QtMultimedia.framework/Versions/A/QtMultimedia /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui /opt/homebrew/lib/QtNetwork.framework/Versions/A/QtNetwork /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore || inf224_autogen inf224_autogen_timestamp_deps
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  /opt/homebrew/lib/QtMultimediaWidgets.framework/Versions/A/QtMultimediaWidgets  /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets  /opt/homebrew/lib/QtMultimedia.framework/Versions/A/QtMultimedia  /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui  -framework OpenGL  -framework AGL  -framework AppKit  -framework ImageIO  -framework Metal  /opt/homebrew/lib/QtNetwork.framework/Versions/A/QtNetwork  /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore  -framework IOKit  -framework DiskArbitration
   LINK_PATH = -F/opt/homebrew/lib
   OBJECT_DIR = CMakeFiles/inf224.dir
