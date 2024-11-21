@@ -1,23 +1,13 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.Socket;
 
-/**
- * MainFrame class that creates a JFrame with a JTextArea, JMenuBar, and JToolBar.
- */
 public class MainFrame extends JFrame {
     private static final long serialVersionUID = 1L;
     private JTextArea textArea;
     private JTextField searchField;
     private JTextField playField;
-    private Socket socket;
-    private PrintWriter out;
-    private BufferedReader in;
+    private ClientConnection clientConnection;
 
     public MainFrame() {
         // Set the title of the JFrame
@@ -50,9 +40,9 @@ public class MainFrame extends JFrame {
         JScrollPane scrollPane = new JScrollPane(textArea);
 
         // Create actions
-        Action searchAction = new SearchAction("Search");
-        Action playAction = new PlayAction("Play");
-        Action exitAction = new ExitAction("Exit");
+        Action searchAction = new Actions.SearchAction("Search", this);
+        Action playAction = new Actions.PlayAction("Play", this);
+        Action exitAction = new Actions.ExitAction("Exit", this);
 
         // Create a JMenuBar and add a JMenu
         JMenuBar menuBar = new JMenuBar();
@@ -96,79 +86,23 @@ public class MainFrame extends JFrame {
         setVisible(true);
 
         // Connect to the server
-        connectToServer();
+        clientConnection = new ClientConnection("127.0.0.1", 3333);
     }
 
-    private void connectToServer() {
-        try {
-            socket = new Socket("127.0.0.1", 3333);
-            out = new PrintWriter(socket.getOutputStream(), true);
-            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public JTextArea getTextArea() {
+        return textArea;
     }
 
-    private class SearchAction extends AbstractAction {
-        private static final long serialVersionUID = 1L;
-
-        public SearchAction(String name) {
-            super(name);
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String query = searchField.getText();
-            if (!query.isEmpty()) {
-                out.println("search " + query);
-                try {
-                    String response = in.readLine();
-                    textArea.append("Search Result:\n" + response + "\n");
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            }
-        }
+    public JTextField getSearchField() {
+        return searchField;
     }
 
-    private class PlayAction extends AbstractAction {
-        private static final long serialVersionUID = 1L;
-
-        public PlayAction(String name) {
-            super(name);
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String query = playField.getText();
-            if (!query.isEmpty()) {
-                out.println("play " + query);
-                try {
-                    String response = in.readLine();
-                    textArea.append("Play Result:\n" + response + "\n");
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            }
-        }
+    public JTextField getPlayField() {
+        return playField;
     }
 
-    private class ExitAction extends AbstractAction {
-        private static final long serialVersionUID = 1L;
-
-        public ExitAction(String name) {
-            super(name);
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            try {
-                socket.close();
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-            System.exit(0);
-        }
+    public ClientConnection getClientConnection() {
+        return clientConnection;
     }
 
     public static void main(String[] args) {
@@ -176,11 +110,6 @@ public class MainFrame extends JFrame {
         System.setProperty("apple.laf.useScreenMenuBar", "true");
 
         // Create and display the main frame
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new MainFrame();
-            }
-        });
+        SwingUtilities.invokeLater(() -> new MainFrame());
     }
 }
