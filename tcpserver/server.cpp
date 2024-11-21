@@ -6,7 +6,7 @@
 #include "ccsocket.h"
 #include "tcpserver.h"
 
-#define PORT 3331
+#define PORT 3333
 
 void processRequest(const std::string &request, MultimediaManager &manager, std::string &response) {
   std::istringstream iss(request);

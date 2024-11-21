@@ -1,29 +1,15 @@
 # ninja log v6
-10	44	1730148240485031243	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/timestamp	d992b7ca3ea71f64
-10	44	1730148240485031243	inf224_autogen/timestamp	d992b7ca3ea71f64
-4	627	1730801614984349179	build.ninja	6cae2e5b2fcca796
-51	717	1730147665603798383	CMakeFiles/inf224.dir/Video.cpp.o	270f39f321f558b1
-44	530	1730148240519620925	CMakeFiles/inf224.dir/main.cpp.o	34188507e0d013cb
-51	775	1730147665603695674	CMakeFiles/inf224.dir/Photo.cpp.o	166b4990badc67ba
-10	44	1730148240485031243	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
-51	725	1730147665603578673	CMakeFiles/inf224.dir/Multimedia.cpp.o	cfcaa1af90d06a71
-919	1020	1730148241394115079	inf224	6161f68e9d14ec02
-45	919	1730148240519790509	CMakeFiles/inf224.dir/MultimediaManager.cpp.o	377f4f7368f857c7
-10	44	1730148240485031243	inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
-27	54	1728995052750728968	CMakeFiles/inf224.dir/inf224_autogen/mocs_compilation.cpp.o	d1357d328df32543
-51	779	1730147665603902676	CMakeFiles/inf224.dir/Group.cpp.o	b58aedda5dfece18
-51	783	1730147665604027551	CMakeFiles/inf224.dir/Film.cpp.o	e28795c38b1651a6
-15	906	1730801614984349179	build.ninja	6cae2e5b2fcca796
-4	86	1730801615009655954	inf224_autogen/timestamp	d992b7ca3ea71f64
-4	86	1730801615009655954	inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
 4	86	1730801615009655954	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/timestamp	d992b7ca3ea71f64
-4	86	1730801615009655954	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
-86	133	1730801615091785013	CMakeFiles/inf224.dir/inf224_autogen/mocs_compilation.cpp.o	b2aa915bf3bbbc24
-86	913	1730801615092137594	CMakeFiles/inf224.dir/Multimedia.cpp.o	11f903cad6133ac1
+4	86	1730801615009655954	inf224_autogen/timestamp	d992b7ca3ea71f64
+15	906	1732189895138187970	build.ninja	6cae2e5b2fcca796
 87	936	1730801615092423174	CMakeFiles/inf224.dir/Video.cpp.o	b526b5ef338b3139
+86	1016	1730801615091983428	CMakeFiles/inf224.dir/main.cpp.o	f2d63b235f5fc29d
 87	937	1730801615092282967	CMakeFiles/inf224.dir/Photo.cpp.o	6744dd85d9a3c251
+4	86	1730801615009655954	/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+86	913	1730801615092137594	CMakeFiles/inf224.dir/Multimedia.cpp.o	11f903cad6133ac1
+2330	2496	1730801617335552097	inf224	2f3274ff1789058b
+916	2330	1730801615921841531	CMakeFiles/inf224.dir/MultimediaManager.cpp.o	610c36464b013b69
+4	86	1730801615009655954	inf224_autogen/mocs_compilation.cpp	d992b7ca3ea71f64
+86	133	1730801615091785013	CMakeFiles/inf224.dir/inf224_autogen/mocs_compilation.cpp.o	b2aa915bf3bbbc24
 87	987	1730801615092594714	CMakeFiles/inf224.dir/Group.cpp.o	2e36c9d22da2d71b
 133	1013	1730801615138734011	CMakeFiles/inf224.dir/Film.cpp.o	8d96bc09d0c26cb9
-86	1016	1730801615091983428	CMakeFiles/inf224.dir/main.cpp.o	f2d63b235f5fc29d
-916	2330	1730801615921841531	CMakeFiles/inf224.dir/MultimediaManager.cpp.o	610c36464b013b69
-2330	2496	1730801617335552097	inf224	2f3274ff1789058b

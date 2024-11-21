@@ -10,6 +10,9 @@ void Video::display(std::ostream& os) const {
 
 void Video::play() const {
     std::cout << "Playing video: " << name << std::endl;
+    // Play the video using macOS QuickTime Player
+    std::string command = "open " + path;
+    system(command.c_str());
 }
 
 void Video::serialize(std::ofstream& ofs) const {

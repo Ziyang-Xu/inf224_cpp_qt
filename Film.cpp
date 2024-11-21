@@ -14,6 +14,9 @@ void Film::display(std::ostream& os) const {
 
 void Film::play() const {
     std::cout << "Playing film: " << name << std::endl;
+    // Play the film using macOS QuickTime Player
+    std::string command = "open " + path;
+    system(command.c_str());
 }
 
 void Film::serialize(std::ofstream& ofs) const {

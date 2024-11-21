@@ -10,6 +10,9 @@ void Photo::display(std::ostream& os) const {
 
 void Photo::play() const {
     std::cout << "Displaying photo: " << name << std::endl;
+    // Display the photo using macOS Preview
+    std::string command = "open " + path;
+    system(command.c_str());
 }
 
 void Photo::serialize(std::ofstream& ofs) const {
