@@ -1,0 +1,37 @@
+# Variables
+JAVA = javac
+JFLAGS = -d bin
+JAR = jar
+JARFLAGS = cvfe
+MAIN_CLASS = MainFrame
+JAVA_SRC = $(wildcard *.java)
+
+# Directories
+BIN_DIR = bin
+
+# Default target
+all: compile-java jar
+
+# Compile Java source files
+compile-java: $(BIN_DIR)
+	@if [ -n "$(JAVA_SRC)" ]; then \
+		$(JAVA) $(JFLAGS) $(JAVA_SRC); \
+	else \
+		echo "No Java source files found in Swing/"; \
+		exit 1; \
+	fi
+
+$(BIN_DIR):
+	mkdir -p $(BIN_DIR)
+
+# Create JAR file
+jar: compile-java
+	$(JAR) $(JARFLAGS) $(MAIN_CLASS).jar $(MAIN_CLASS) -C $(BIN_DIR) .
+
+# Run the application
+run: jar
+	java -cp $(MAIN_CLASS).jar $(MAIN_CLASS)
+
+# Clean up
+clean:
+	rm -rf $(BIN_DIR) $(MAIN_CLASS).jar

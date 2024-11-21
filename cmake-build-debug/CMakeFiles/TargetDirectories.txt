@@ -1,5 +1,0 @@
-/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/CMakeFiles/inf224.dir
-/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/CMakeFiles/inf224_autogen_timestamp_deps.dir
-/Users/Chaleur/Desktop/France/télécom/2ème Année/inf224/cmake-build-debug/CMakeFiles/inf224_autogen.dir
