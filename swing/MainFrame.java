@@ -1,7 +1,14 @@
+/**
+ * @file MainFrame.java
+ * @brief Main application frame for the Swing application.
+ */
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
+/**
+ * @brief MainFrame class that sets up the main window.
+ */
 public class MainFrame extends JFrame {
     private static final long serialVersionUID = 1L;
     private JTextArea textArea;
@@ -9,6 +16,9 @@ public class MainFrame extends JFrame {
     private JTextField playField;
     private ClientConnection clientConnection;
 
+    /**
+     * @brief Constructor for the MainFrame class.
+     */
     public MainFrame() {
         // Set the title of the JFrame
         setTitle("Main Frame Example");
@@ -105,6 +115,10 @@ public class MainFrame extends JFrame {
         return clientConnection;
     }
 
+    /**
+     * @brief Main method to run the application.
+     * @param args Command-line arguments.
+     */
     public static void main(String[] args) {
         // For MacOSX menu bar appearance
         System.setProperty("apple.laf.useScreenMenuBar", "true");

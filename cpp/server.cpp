@@ -1,3 +1,7 @@
+/**
+ * @file server.cpp
+ * @brief Main server application that handles multimedia requests.
+ */
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -8,6 +12,12 @@
 
 #define PORT 3333
 
+/**
+ * @brief Processes a request from the client.
+ * @param request The request string from the client.
+ * @param manager The multimedia manager to handle the request.
+ * @param response The response string to be sent back to the client.
+ */
 void processRequest(const std::string &request, MultimediaManager &manager, std::string &response) {
   std::istringstream iss(request);
   std::string command;
@@ -35,6 +45,10 @@ void processRequest(const std::string &request, MultimediaManager &manager, std:
   }
 }
 
+/**
+ * @brief Main function to run the server.
+ * @return Exit status.
+ */
 int main() {
   MultimediaManager manager;
   // Add some multimedia objects and groups to the manager for testing

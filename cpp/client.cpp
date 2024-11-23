@@ -1,3 +1,7 @@
+/**
+ * @file client.cpp
+ * @brief Main client application to interact with the server.
+ */
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -6,6 +10,10 @@
 static const std::string HOST = "127.0.0.1";
 static const int PORT = 3331;
 
+/**
+ * @brief Main function to run the client.
+ * @return Exit status.
+ */
 int main() {
   Socket sock;
   SocketBuffer sockbuf(sock);
